@@ -1,0 +1,34 @@
+services:
+  - name: mysql-database
+    type: private_service
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /
+    envVars:
+      - key: MYSQL_DATABASE
+        value: DiamondSoft
+      - key: MYSQL_USER
+        value: iits
+      - key: MYSQL_PASSWORD
+        value: iits123
+      - key: MYSQL_ROOT_PASSWORD
+        value: rootpassword
+
+  - name: my-node-app
+    type: web
+    plan: free
+    env: node
+    buildCommand: npm install
+    startCommand: node app.js
+    envVars:
+      - key: DB_HOST
+        value: mysql-database
+      - key: DB_USER
+        value: iits
+      - key: DB_PASSWORD
+        value: iits123
+      - key: DB_NAME
+        value: DiamondSoft
+      - key: DB_PORT
+        value: "3306"
