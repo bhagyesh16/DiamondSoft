@@ -4,4 +4,4 @@ ENV MYSQL_USER=iits
 ENV MYSQL_PASSWORD=iits123
 ENV MYSQL_ROOT_PASSWORD=rootpassword
 EXPOSE 3000
-CMD ["mysqld"]
+CMD ["node", "server.js"]
