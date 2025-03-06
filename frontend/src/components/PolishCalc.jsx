@@ -43,7 +43,7 @@ const PolishCalc = () => {
     const fetchData = async () => {
       try {
         if (isAuthenticatedFn()) {
-          const response = await axios.get('http://192.168.1.59:5000/api/sdiscount');
+          const response = await axios.get('https://diamondsoft-backend.onrender.com/api/sdiscount');
 
           console.log(response);
         }
@@ -66,13 +66,13 @@ const PolishCalc = () => {
       let response;
       if (price_type === 'own') {
         // Fetch rate for own price type
-        response = await axios.get(`http://192.168.1.59:5000/api/getpricelistown/${polishWeight}/${selectedshape}/${selectedColour}/${selectedPurity}/${price_type}`);
+        response = await axios.get(`https://diamondsoft-backend.onrender.com/api/getpricelistown/${polishWeight}/${selectedshape}/${selectedColour}/${selectedPurity}/${price_type}`);
       } else if (price_type === 'Repose') {
         // Fetch rate for Repose price type
-        response = await axios.get(`http://192.168.1.59:5000/api/getpricelistrep/${polishWeight}/${selectedshape}/${selectedColour}/${selectedPurity}/${selectedCut}/${selectedFlrn}/${price_type}`);
+        response = await axios.get(`https://diamondsoft-backend.onrender.com/api/getpricelistrep/${polishWeight}/${selectedshape}/${selectedColour}/${selectedPurity}/${selectedCut}/${selectedFlrn}/${price_type}`);
   } else if (price_type === 'Rep') {
         // Fetch rate for Rep price type
-        response = await axios.get(`http://192.168.1.59:5000/api/getpricelistrep/${polishWeight}/${selectedshape}/${selectedColour}/${selectedPurity}/${selectedCut}/${selectedFlrn}/${price_type}`);
+        response = await axios.get(`https://diamondsoft-backend.onrender.com/api/getpricelistrep/${polishWeight}/${selectedshape}/${selectedColour}/${selectedPurity}/${selectedCut}/${selectedFlrn}/${price_type}`);
       }
       // Update the rate state
       setRate(response.data.Rate);
@@ -85,7 +85,7 @@ const PolishCalc = () => {
   const handleCalculateDiscount = useCallback(async () => {
     try {
 
-      const response = await axios.get(`http://192.168.1.59:5000/api/getsdiscount/${polishWeight}/${selectedshape}/${selectedColour}/${selectedPurity}`);
+      const response = await axios.get(`https://diamondsoft-backend.onrender.com/api/getsdiscount/${polishWeight}/${selectedshape}/${selectedColour}/${selectedPurity}`);
 
       setDiscount(response.data.discount);
       const stdrate = Rate - (Rate * discount / 100);
@@ -108,7 +108,7 @@ const PolishCalc = () => {
         setflrnRate(Rate); // Set flrnRate to Rate directly
       } else {
 
-        const response = await axios.get(`http://192.168.1.59:5000/api/getfdiscount/${polishWeight}/${selectedshape}/${selectedColour}/${selectedPurity}/${selectedFlrn}`);
+        const response = await axios.get(`https://diamondsoft-backend.onrender.com/api/getfdiscount/${polishWeight}/${selectedshape}/${selectedColour}/${selectedPurity}/${selectedFlrn}`);
         setFlrnDiscount(response.data.discount);
         const flrnrate = (stdRate - (stdRate * flrndiscount / 100));
         setflrnRate(flrnrate);
@@ -130,7 +130,7 @@ const PolishCalc = () => {
         setcutRate(Rate); // Set cutRate to Rate directly
       } else {
 
-        const response = await axios.get(`http://192.168.1.59:5000/api/getcdiscount/${polishWeight}/${selectedshape}/${selectedColour}/${selectedPurity}/${selectedCut}`);
+        const response = await axios.get(`https://diamondsoft-backend.onrender.com/api/getcdiscount/${polishWeight}/${selectedshape}/${selectedColour}/${selectedPurity}/${selectedCut}`);
         setCutdiscount(response.data.discount);
         const crate = ((flrnRate * cutdiscount) / 100);
         const cutrate = flrnRate - crate;
@@ -149,7 +149,7 @@ const PolishCalc = () => {
   const handleCalculateNattsDiscount = useCallback(async () => {
     try {
 
-      const response = await axios.get(`http://192.168.1.59:5000/api/getndiscount/${polishWeight}/${selectedshape}/${selectedColour}/${selectedPurity}/${selectedNatts}`);
+      const response = await axios.get(`https://diamondsoft-backend.onrender.com/api/getndiscount/${polishWeight}/${selectedshape}/${selectedColour}/${selectedPurity}/${selectedNatts}`);
       setnattsdiscount(response.data.discount);
       console.log(`natts discount`, response.data.discount);
       const nattsrate = cutRate - (cutRate * nattsdiscount / 100);
@@ -167,7 +167,7 @@ const PolishCalc = () => {
   const handleCalculateMilkyDiscount = useCallback(async () => {
     try {
 
-      const response = await axios.get(`http://192.168.1.59:5000/api/getmdiscount/${polishWeight}/${selectedshape}/${selectedColour}/${selectedPurity}/${selectedMilky}`);
+      const response = await axios.get(`https://diamondsoft-backend.onrender.com/api/getmdiscount/${polishWeight}/${selectedshape}/${selectedColour}/${selectedPurity}/${selectedMilky}`);
       setMilkyDiscount(response.data.discount);
       console.log(`Milky discount`, response.data.discount);
       const milkyrate = nattsRate - (nattsRate * milkyDiscount / 100);
@@ -185,7 +185,7 @@ const PolishCalc = () => {
   const handleCalculateLBDiscount = useCallback(async () => {
     try {
 
-      const response = await axios.get(`http://192.168.1.59:5000/api/getlbdiscount/${polishWeight}/${selectedshape}/${selectedColour}/${selectedPurity}/${selectedLb}`);
+      const response = await axios.get(`https://diamondsoft-backend.onrender.com/api/getlbdiscount/${polishWeight}/${selectedshape}/${selectedColour}/${selectedPurity}/${selectedLb}`);
       setLBDiscount(response.data.discount);
       console.log(`LB discount`, response.data.discount);
       const LBrate = milkyRate - (milkyRate * LBDiscount / 100);

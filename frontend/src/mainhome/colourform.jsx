@@ -15,7 +15,7 @@ const ColourForm = () => {
       // If selectedColour is set, perform update
       if (selectedColour) {
 
-        const response = await axios.put(`http://192.168.1.59:5000/master/colour/${selectedColour.colour_id}`, {
+        const response = await axios.put(`https://diamondsoft-backend.onrender.com/master/colour/${selectedColour.colour_id}`, {
           colour_name,
         }, {
           headers: {
@@ -28,7 +28,7 @@ const ColourForm = () => {
       } else {
         // Make a POST request to your API endpoint
 
-        const response = await axios.post('http://192.168.1.59:5000/master/colour', {
+        const response = await axios.post('https://diamondsoft-backend.onrender.com/master/colour', {
           colour_id,
           colour_name,
         }, {
@@ -59,7 +59,7 @@ const ColourForm = () => {
     try {
       // Fetch data from the API endpoint
 
-      const response = await axios.get('http://192.168.1.59:5000/master/colour');
+      const response = await axios.get('https://diamondsoft-backend.onrender.com/master/colour');
       // Update the state with the fetched data
       setColourData(response.data);
     } catch (error) {
@@ -71,7 +71,7 @@ const ColourForm = () => {
     try {
       // Make a DELETE request to your API endpoint
 
-      const response = await axios.delete(`http://192.168.1.59:5000/master/colour/${id}`);
+      const response = await axios.delete(`https://diamondsoft-backend.onrender.com/master/colour/${id}`);
       
       // Handle the response as needed
       console.log('Delete Response:', response.data);

@@ -22,7 +22,7 @@ const FileUploadForm = ({ setPricelistData }) => {
         formData.append('date', new Date().toISOString());
         formData.append('price_type', priceType);
 
-        const apiUrl = priceType === 'own' ? 'http://192.168.1.59:5000/api/ownupload' : 'http://192.168.1.59:5000/api/upload';
+        const apiUrl = priceType === 'own' ? 'https://diamondsoft-backend.onrender.com/api/ownupload' : 'https://diamondsoft-backend.onrender.com/api/upload';
 
         const response = await axios({
           method: 'post',
@@ -49,7 +49,7 @@ const FileUploadForm = ({ setPricelistData }) => {
   const fetchPricelistData = async () => {
     try {
 
-      const response = await axios.get('http://192.168.1.59:5000/api/details');
+      const response = await axios.get('https://diamondsoft-backend.onrender.com/api/details');
       setPricelistData(response.data);
     } catch (error) {
       console.error('Error fetching pricelist data:', error);

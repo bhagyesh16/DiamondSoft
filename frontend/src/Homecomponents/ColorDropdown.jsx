@@ -7,7 +7,7 @@ const ColourDropdown = ({ onChange, value }) => {
   useEffect(() => {
     const fetchColourData = async () => {
       try {
-        const response = await axios.get('http://192.168.1.59:5000/master/colour');
+        const response = await axios.get('https://diamondsoft-backend.onrender.com/master/colour');
         setColourData(response.data);
       } catch (error) {
         console.error('Error fetching Colour data:', error);

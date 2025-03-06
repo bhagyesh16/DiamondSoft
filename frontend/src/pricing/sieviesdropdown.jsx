@@ -9,7 +9,7 @@ const SievesDropdown = ({ onChange, value }) => {
   useEffect(() => {
     const fetchSievesData = async () => {
       try {
-        const response = await axios.get('http://192.168.1.59:5000/master/sieves');
+        const response = await axios.get('https://diamondsoft-backend.onrender.com/master/sieves');
         setSievesData(response.data);
       } catch (error) {
         console.error('Error fetching Sieves data:', error);

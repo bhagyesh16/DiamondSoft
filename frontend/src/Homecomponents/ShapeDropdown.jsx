@@ -10,7 +10,7 @@ const ShapeDropdown = ({ onChange, value }) => {
     const fetchShapeData = async () => {
       try {
 
-        const response = await axios.get('http://192.168.1.59:5000/master/shape');
+        const response = await axios.get('https://diamondsoft-backend.onrender.com/master/shape');
         setShapeData(response.data);
       } catch (error) {
         console.error('Error fetching shape data:', error);

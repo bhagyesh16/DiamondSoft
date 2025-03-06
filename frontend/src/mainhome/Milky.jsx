@@ -15,7 +15,7 @@ const Milky = () => {
       // If selectedmilky is set, perform update
       if (selectedmilky) {
 
-        const response = await axios.put(`http://192.168.1.59:5000/master/milky/${selectedmilky.milky_id}`, {
+        const response = await axios.put(`https://diamondsoft-backend.onrender.com/master/milky/${selectedmilky.milky_id}`, {
           milky_name,
           milky_order,
         }, {
@@ -29,7 +29,7 @@ const Milky = () => {
       } else {
         // Make a POST request to your API endpoint
 
-        const response = await axios.post('http://192.168.1.59:5000/master/milky', {
+        const response = await axios.post('https://diamondsoft-backend.onrender.com/master/milky', {
           milky_id,
           milky_name,
           milky_order,
@@ -61,7 +61,7 @@ const Milky = () => {
     try {
       // Fetch data from the API endpoint
 
-      const response = await axios.get('http://192.168.1.59:5000/master/milky');
+      const response = await axios.get('https://diamondsoft-backend.onrender.com/master/milky');
 
       // Update the state with the fetched data
       setmilkyData(response.data);
@@ -74,7 +74,7 @@ const Milky = () => {
     try {
       // Make a DELETE request to your API endpoint
 
-      const response = await axios.delete(`http://192.168.1.59:5000/master/milky/${id}`);
+      const response = await axios.delete(`https://diamondsoft-backend.onrender.com/master/milky/${id}`);
 
       // Handle the response as needed
       console.log('Delete Response:', response.data);

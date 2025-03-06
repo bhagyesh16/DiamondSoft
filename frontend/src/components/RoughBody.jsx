@@ -93,7 +93,7 @@ const RoughBody = () => {
         return; // Exit the function early if purity_weight is NaN
       }
 
-      const response = await axios.get('http://192.168.1.59:5000/master/roughpricelist', {
+      const response = await axios.get('https://diamondsoft-backend.onrender.com/master/roughpricelist', {
 
         params: {
           shape_id: selectedShape,
@@ -199,7 +199,7 @@ const RoughBody = () => {
   const fetchData = async () => {
     try {
 
-      const response = await axios.get(`http://192.168.1.59:5000/master/roughcalc/${generatedId}`);
+      const response = await axios.get(`https://diamondsoft-backend.onrender.com/master/roughcalc/${generatedId}`);
       setFetchedData(response.data.data);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -210,7 +210,7 @@ const RoughBody = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://192.168.1.59:5000/master/roughcalc/${generatedId}`);
+        const response = await axios.get(`https://diamondsoft-backend.onrender.com/master/roughcalc/${generatedId}`);
         setFetchedData(response.data.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -250,7 +250,7 @@ const RoughBody = () => {
       const calculatedRoughPrice = calculatedValue - formData.labour - formData.extra_exp;
       const MU = calculatedRoughPrice / 110 * 100; // 10% of roughprice
 
-      const insertedData = await axios.post('http://192.168.1.59:5000/master/roughcalc', {
+      const insertedData = await axios.post('https://diamondsoft-backend.onrender.com/master/roughcalc', {
 
         RH_id: generatedId,
         colour_id: selectedColour,
@@ -331,7 +331,7 @@ const RoughBody = () => {
 
       // Make an HTTP PUT request to update the data
 
-      const response = await axios.put(`http://192.168.1.59:5000/master/roughcalc/${selectedItemId}`, updatedData);
+      const response = await axios.put(`https://diamondsoft-backend.onrender.com/master/roughcalc/${selectedItemId}`, updatedData);
 
       if (response.data.success) {
         // Handle successful update
@@ -385,7 +385,7 @@ const RoughBody = () => {
     try {
       // Make an HTTP DELETE request to the server
 
-      const response = await axios.delete(`http://192.168.1.59:5000/master/roughcalc/${id}`);
+      const response = await axios.delete(`https://diamondsoft-backend.onrender.com/master/roughcalc/${id}`);
       // Check if the deletion was successful
       if (response.data.success) {
         // Handle successful deletion

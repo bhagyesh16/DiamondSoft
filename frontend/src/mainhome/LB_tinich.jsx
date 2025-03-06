@@ -15,7 +15,7 @@ const LB_tinich = () => {
         // If selectedLB is set, perform update
         if (selectedLB) {
 
-          const response = await axios.put(`http://192.168.1.59:5000/master/LB/${selectedLB.LB_id}`, {
+          const response = await axios.put(`https://diamondsoft-backend.onrender.com/master/LB/${selectedLB.LB_id}`, {
             LB_name,
             LB_order,
           }, {
@@ -29,7 +29,7 @@ const LB_tinich = () => {
         } else {
           // Make a POST request to your API endpoint
 
-          const response = await axios.post('http://192.168.1.59:5000/master/LB', {
+          const response = await axios.post('https://diamondsoft-backend.onrender.com/master/LB', {
             LB_id,
             LB_name,
             LB_order,
@@ -61,7 +61,7 @@ const LB_tinich = () => {
       try {
         // Fetch data from the API endpoint
 
-        const response = await axios.get('http://192.168.1.59:5000/master/LB');
+        const response = await axios.get('https://diamondsoft-backend.onrender.com/master/LB');
   
         // Update the state with the fetched data
         setLBData(response.data);
@@ -74,7 +74,7 @@ const LB_tinich = () => {
       try {
         // Make a DELETE request to your API endpoint
 
-        const response = await axios.delete(`http://192.168.1.59:5000/master/LB/${id}`);
+        const response = await axios.delete(`https://diamondsoft-backend.onrender.com/master/LB/${id}`);
         // Handle the response as needed
         console.log('Delete Response:', response.data);
         alert(`LB ${id} Deleted Successfully`);

@@ -26,7 +26,7 @@ const FlrnDiscount = () => {
 
     const fetchPricelistData = async () => {
         try {
-            const response = await axios.get('http://192.168.1.59:5000/api/fdiscount');
+            const response = await axios.get('https://diamondsoft-backend.onrender.com/api/fdiscount');
             setPricelistData(response.data);
         } catch (error) {
             console.error('Error fetching pricelist data:', error);
@@ -53,7 +53,7 @@ const FlrnDiscount = () => {
 
     const handleEdit = async (id) => {
         try {
-            const response = await axios.get(`http://192.168.1.59:5000/api/fdiscount/${id}`);
+            const response = await axios.get(`https://diamondsoft-backend.onrender.com/api/fdiscount/${id}`);
 
             const pricelistData = response.data;
             console.log(`data from edit :`, pricelistData);
@@ -94,7 +94,7 @@ const FlrnDiscount = () => {
             console.log('Updating data...');
             console.log('UpdatedFormData:', UpdatedFormData);
 
-            await axios.put(`http://192.168.1.59:5000/api/fdiscount/${formData.id}`, UpdatedFormData);
+            await axios.put(`https://diamondsoft-backend.onrender.com/api/fdiscount/${formData.id}`, UpdatedFormData);
             alert('Data updated successfully!');
             setFormData({
                 id: '',
@@ -114,7 +114,7 @@ const FlrnDiscount = () => {
     const handleDelete = async (id) => {
         try {
             // Delete pricelist by pricelistId
-            await axios.delete(`http://192.168.1.59:5000/api/fdiscount/${id}`);
+            await axios.delete(`https://diamondsoft-backend.onrender.com/api/fdiscount/${id}`);
             alert(`pricelist ${id} is deleted successfully`)
             // Fetch updated pricelist data
             fetchPricelistData();
@@ -140,7 +140,7 @@ const FlrnDiscount = () => {
                 discount: document.querySelector('input[name="discount"]').value,
             };
 
-            await axios.post('http://192.168.1.59:5000/api/fdiscount', InsertedFormData);
+            await axios.post('https://diamondsoft-backend.onrender.com/api/fdiscount', InsertedFormData);
             alert('Data submitted successfully!');
             setFormData({
                 id: '',
@@ -172,7 +172,7 @@ const FlrnDiscount = () => {
             const formData = new FormData();
             formData.append('file', csvFile);
 
-            await axios.post('http://192.168.1.59:5000/api/fdiscount/upload', formData, {
+            await axios.post('https://diamondsoft-backend.onrender.com/api/fdiscount/upload', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }

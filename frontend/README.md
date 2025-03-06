@@ -10,12 +10,12 @@ In the project directory, you can run:
 
 Runs the app in the development mode.\
 <<<<<<< HEAD
-Open [http://192.168.1.59:5000](http://192.168.1.59:5000) to view it in your browser.
+Open [https://diamondsoft-backend.onrender.com](https://diamondsoft-backend.onrender.com) to view it in your browser.
 =======
 <<<<<<< HEAD
-Open [http://192.168.1.59:5000](http://192.168.1.59:5000) to view it in your browser.
+Open [https://diamondsoft-backend.onrender.com](https://diamondsoft-backend.onrender.com) to view it in your browser.
 =======
-Open [http://192.168.1.59:5000](http://192.168.1.59:5000) to view it in your browser.
+Open [https://diamondsoft-backend.onrender.com](https://diamondsoft-backend.onrender.com) to view it in your browser.
 >>>>>>> c0f7394eb3886c3e071a7aec8e945779cb3e42f7
 >>>>>>> dc3d8631793db3019fb13176733726164a2fb9bf
 

@@ -8,7 +8,7 @@ const NattsDropdown = ({ onChange, value }) => {
   useEffect(() => {
     const fetchnattsData = async () => {
       try {
-        const response = await axios.get('http://192.168.1.59:5000/master/natts');
+        const response = await axios.get('https://diamondsoft-backend.onrender.com/master/natts');
         setnattsData(response.data);
       } catch (error) {
         console.error('Error fetching natts data:', error);

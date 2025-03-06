@@ -31,7 +31,7 @@ const Pricelist = () => {
 
     const fetchPricelistData = async () => {
         try {
-            const response = await axios.get('http://192.168.1.59:5000/api/details');
+            const response = await axios.get('https://diamondsoft-backend.onrender.com/api/details');
             setPricelistData(response.data);
         } catch (error) {
             console.error('Error fetching pricelist data:', error);
@@ -64,7 +64,7 @@ const Pricelist = () => {
         try {
             // Fetch pricelist data by pricelistId
 
-            const response = await axios.get(`http://192.168.1.59:5000/api/pricelist/${Pricelist_id}`);
+            const response = await axios.get(`https://diamondsoft-backend.onrender.com/api/pricelist/${Pricelist_id}`);
 
             const pricelistData = response.data;
             console.log(pricelistData);
@@ -113,7 +113,7 @@ const Pricelist = () => {
             };
 
 
-            await axios.put(`http://192.168.1.59:5000/api/pricelist/${formData.Pricelist_id}`, UpdatedFormData);
+            await axios.put(`https://diamondsoft-backend.onrender.com/api/pricelist/${formData.Pricelist_id}`, UpdatedFormData);
             alert('Data updated successfully!');
             setFormData({
                 Pricelist_id: '',
@@ -136,7 +136,7 @@ const Pricelist = () => {
         try {
             // Delete pricelist by pricelistId
 
-            await axios.delete(`http://192.168.1.59:5000/api/pricelist/${Pricelist_id}`);
+            await axios.delete(`https://diamondsoft-backend.onrender.com/api/pricelist/${Pricelist_id}`);
             alert(`pricelist ${Pricelist_id} is deleted successfully`)
             // Fetch updated pricelist data
             fetchPricelistData();
@@ -169,7 +169,7 @@ const Pricelist = () => {
             };
 
 
-            await axios.post('http://192.168.1.59:5000/api/pricelist', InsertedFormData);
+            await axios.post('https://diamondsoft-backend.onrender.com/api/pricelist', InsertedFormData);
             console.log(formData);
             alert('Data submitted successfully!');
             setFormData({

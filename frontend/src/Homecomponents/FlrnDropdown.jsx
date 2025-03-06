@@ -10,7 +10,7 @@ const FlrnDropdown = ({ onChange, value, disabled }) => {
     const fetchFlrnData = async () => {
       try {
 
-        const response = await axios.get('http://192.168.1.59:5000/master/flrn');
+        const response = await axios.get('https://diamondsoft-backend.onrender.com/master/flrn');
         setFlrnData(response.data);
       } catch (error) {
         console.error('Error fetching Flrn data:', error);

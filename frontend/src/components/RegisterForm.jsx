@@ -29,7 +29,7 @@ const RegisterForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        axios.post('http://192.168.1.59:5000/api/users', formData)
+        axios.post('https://diamondsoft-backend.onrender.com/api/users', formData)
             .then(response => {
                 alert('Registration Successful:', response.data);
             })

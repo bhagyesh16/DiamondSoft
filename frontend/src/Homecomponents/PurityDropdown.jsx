@@ -8,7 +8,7 @@ const PurityDropdown = ({ onChange, value }) => {
     const fetchPurityData = async () => {
       try {
 
-        const response = await axios.get('http://192.168.1.59:5000/master/purity');
+        const response = await axios.get('https://diamondsoft-backend.onrender.com/master/purity');
         setPurityData(response.data);
       } catch (error) {
         console.error('Error fetching Purity data:', error);

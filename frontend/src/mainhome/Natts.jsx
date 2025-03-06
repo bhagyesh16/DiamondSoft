@@ -14,7 +14,7 @@ const Natts = () => {
       try {
         // If selectednatts is set, perform update
         if (selectednatts) {
-          const response = await axios.put(`http://192.168.1.59:5000/master/natts/${selectednatts.natts_id}`, {
+          const response = await axios.put(`https://diamondsoft-backend.onrender.com/master/natts/${selectednatts.natts_id}`, {
             natts_name,
             natts_order,
           }, {
@@ -27,7 +27,7 @@ const Natts = () => {
           setSelectednatts(null);
         } else {
           // Make a POST request to your API endpoint
-          const response = await axios.post('http://192.168.1.59:5000/master/natts', {
+          const response = await axios.post('https://diamondsoft-backend.onrender.com/master/natts', {
             natts_id,
             natts_name,
             natts_order,
@@ -58,7 +58,7 @@ const Natts = () => {
     const fetchnattsData = async () => {
       try {
         // Fetch data from the API endpoint
-        const response = await axios.get('http://192.168.1.59:5000/master/natts');
+        const response = await axios.get('https://diamondsoft-backend.onrender.com/master/natts');
   
         // Update the state with the fetched data
         setnattsData(response.data);
@@ -70,7 +70,7 @@ const Natts = () => {
     const handleDelete = async (id) => {
       try {
         // Make a DELETE request to your API endpoint
-        const response = await axios.delete(`http://192.168.1.59:5000/master/natts/${id}`);
+        const response = await axios.delete(`https://diamondsoft-backend.onrender.com/master/natts/${id}`);
   
         // Handle the response as needed
         console.log('Delete Response:', response.data);

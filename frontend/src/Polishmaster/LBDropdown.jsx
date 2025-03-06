@@ -7,7 +7,7 @@ const LBDropdown = ({ onChange, value }) => {
     useEffect(() => {
         const fetchLBData = async () => {
             try {
-                const response = await axios.get('http://192.168.1.59:5000/master/LB');
+                const response = await axios.get('https://diamondsoft-backend.onrender.com/master/LB');
                 setLBData(response.data);
             } catch (error) {
                 console.error('Error fetching LB data:', error);
