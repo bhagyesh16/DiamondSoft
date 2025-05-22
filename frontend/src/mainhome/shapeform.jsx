@@ -14,7 +14,7 @@ const ShapeForm = () => {
     try {
       // If selectedShape is set, perform update
       if (selectedShape) {
-        const response = await axios.put(`https://diamondsoft-backend.onrender.com/master/shape/${selectedShape.shape_id}`, {
+        const response = await axios.put(`http://192.168.1.59:5000/master/shape/${selectedShape.shape_id}`, {
           shape_name,
         }, {
           headers: {
@@ -26,7 +26,7 @@ const ShapeForm = () => {
         setSelectedShape(null);
       } else {
         // Make a POST request to your API endpoint
-        const response = await axios.post('https://diamondsoft-backend.onrender.com/master/shape', {
+        const response = await axios.post('http://192.168.1.59:5000/master/shape', {
           shape_id,
           shape_name,
         }, {
@@ -56,7 +56,7 @@ const ShapeForm = () => {
   const fetchShapeData = async () => {
     try {
       // Fetch data from the API endpoint
-      const response = await axios.get('https://diamondsoft-backend.onrender.com/master/shape');
+      const response = await axios.get('http://192.168.1.59:5000/master/shape');
 
       // Update the state with the fetched data
       setShapeData(response.data);
@@ -68,7 +68,7 @@ const ShapeForm = () => {
   const handleDelete = async (id) => {
     try {
       // Make a DELETE request to your API endpoint
-      const response = await axios.delete(`https://diamondsoft-backend.onrender.com/master/shape/${id}`);
+      const response = await axios.delete(`http://192.168.1.59:5000/master/shape/${id}`);
 
       // Handle the response as needed
       console.log('Delete Response:', response.data);

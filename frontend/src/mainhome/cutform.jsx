@@ -15,7 +15,7 @@ const CutForm = () => {
       // If selectedCut is set, perform update
       if (selectedCut) {
 
-        const response = await axios.put(`https://diamondsoft-backend.onrender.com/master/cut/${selectedCut.cut_id}`, {
+        const response = await axios.put(`http://192.168.1.59:5000/master/cut/${selectedCut.cut_id}`, {
           cut_name,
         }, {
           headers: {
@@ -28,7 +28,7 @@ const CutForm = () => {
       } else {
         // Make a POST request to your API endpoint
 
-        const response = await axios.post('https://diamondsoft-backend.onrender.com/master/cut', {
+        const response = await axios.post('http://192.168.1.59:5000/master/cut', {
           cut_id,
           cut_name,
         }, {
@@ -59,7 +59,7 @@ const CutForm = () => {
     try {
       // Fetch data from the API endpoint
 
-      const response = await axios.get('https://diamondsoft-backend.onrender.com/master/cut');
+      const response = await axios.get('http://192.168.1.59:5000/master/cut');
 
       // Update the state with the fetched data
       setCutData(response.data);
@@ -72,7 +72,7 @@ const CutForm = () => {
     try {
       // Make a DELETE request to your API endpoint
 
-      const response = await axios.delete(`https://diamondsoft-backend.onrender.com/master/cut/${id}`);
+      const response = await axios.delete(`http://192.168.1.59:5000/master/cut/${id}`);
 
       // Handle the response as needed
       console.log('Delete Response:', response.data);

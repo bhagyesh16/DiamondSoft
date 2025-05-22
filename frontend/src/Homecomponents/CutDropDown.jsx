@@ -7,7 +7,7 @@ const CutDropdown = ({ onChange, value, disabled }) => {
   useEffect(() => {
     const fetchCutData = async () => {
       try {
-        const response = await axios.get('https://diamondsoft-backend.onrender.com/master/cut');
+        const response = await axios.get('http://192.168.1.59:5000/master/cut');
         setCutData(response.data);
       } catch (error) {
         console.error('Error fetching cut data:', error);

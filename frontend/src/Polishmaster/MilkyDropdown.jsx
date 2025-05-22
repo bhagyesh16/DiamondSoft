@@ -7,7 +7,7 @@ const MilkyDropdown = ({ onChange, value }) => {
     useEffect(() => {
         const fetchMilkyData = async () => {
             try {
-                const response = await axios.get('https://diamondsoft-backend.onrender.com/master/milky');
+                const response = await axios.get('http://192.168.1.59:5000/master/milky');
                 setMilkyData(response.data);
             } catch (error) {
                 console.error('Error fetching milky data:', error);

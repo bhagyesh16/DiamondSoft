@@ -36,7 +36,7 @@ const LoginForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("https://diamondsoft-backend.onrender.com/api/login", loginData);
+      const response = await axios.post("http://192.168.1.59:5000/api/login", loginData);
       setAuthToken(response.data.token);
       alert("Login Successful");
       navigate("/home");

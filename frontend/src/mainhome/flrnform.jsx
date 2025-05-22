@@ -14,7 +14,7 @@ const FlrnForm = () => {
       // If selectedFlrn is set, perform update
       if (selectedFlrn) {
 
-        const response = await axios.put(`https://diamondsoft-backend.onrender.com/master/flrn/${selectedFlrn.flrn_id}`, {
+        const response = await axios.put(`http://192.168.1.59:5000/master/flrn/${selectedFlrn.flrn_id}`, {
           flrn_name,
         }, {
           headers: {
@@ -27,7 +27,7 @@ const FlrnForm = () => {
       } else {
         // Make a POST request to your API endpoint
 
-        const response = await axios.post('https://diamondsoft-backend.onrender.com/master/flrn', {
+        const response = await axios.post('http://192.168.1.59:5000/master/flrn', {
           flrn_id,
           flrn_name,
         }, {
@@ -58,7 +58,7 @@ const FlrnForm = () => {
     try {
       // Fetch data from the API endpoint
 
-      const response = await axios.get('https://diamondsoft-backend.onrender.com/master/flrn');
+      const response = await axios.get('http://192.168.1.59:5000/master/flrn');
 
       // Update the state with the fetched data
       setFlrnData(response.data);
@@ -71,7 +71,7 @@ const FlrnForm = () => {
     try {
       // Make a DELETE request to your API endpoint
 
-      const response = await axios.delete(`https://diamondsoft-backend.onrender.com/master/flrn/${id}`);
+      const response = await axios.delete(`http://192.168.1.59:5000/master/flrn/${id}`);
 
       // Handle the response as needed
       console.log('Delete Response:', response.data);

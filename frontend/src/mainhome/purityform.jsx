@@ -14,7 +14,7 @@ const PurityForm = () => {
       // If selectedPurity is set, perform update
       if (selectedPurity) {
 
-        const response = await axios.put(`https://diamondsoft-backend.onrender.com/master/purity/${selectedPurity.purity_id}`, {
+        const response = await axios.put(`http://192.168.1.59:5000/master/purity/${selectedPurity.purity_id}`, {
           purity_name,
         }, {
           headers: {
@@ -27,7 +27,7 @@ const PurityForm = () => {
       } else {
         // Make a POST request to your API endpoint
 
-        const response = await axios.post('https://diamondsoft-backend.onrender.com/master/purity', {
+        const response = await axios.post('http://192.168.1.59:5000/master/purity', {
           purity_id,
           purity_name,
         }, {
@@ -58,7 +58,7 @@ const PurityForm = () => {
     try {
       // Fetch data from the API endpoint
 
-      const response = await axios.get('https://diamondsoft-backend.onrender.com/master/purity');
+      const response = await axios.get('http://192.168.1.59:5000/master/purity');
 
       // Update the state with the fetched data
       setPurityData(response.data);
@@ -71,7 +71,7 @@ const PurityForm = () => {
     try {
       // Make a DELETE request to your API endpoint
 
-      const response = await axios.delete(`https://diamondsoft-backend.onrender.com/master/purity/${id}`);
+      const response = await axios.delete(`http://192.168.1.59:5000/master/purity/${id}`);
 
       // Handle the response as needed
       console.log('Delete Response:', response.data);

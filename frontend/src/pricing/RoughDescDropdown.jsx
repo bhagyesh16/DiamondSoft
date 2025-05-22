@@ -9,7 +9,7 @@ const RoughDescDropdown = ({ onChange, value }) => {
   useEffect(() => {
     const fetchRoughDescData = async () => {
       try {
-        const response = await axios.get('https://diamondsoft-backend.onrender.com/master/Rough_Desc');
+        const response = await axios.get('http://192.168.1.59:5000/master/Rough_Desc');
         setRoughDescData(response.data);
       } catch (error) {
         console.error('Error fetching RoughDesc data:', error);

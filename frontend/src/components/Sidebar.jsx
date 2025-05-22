@@ -32,7 +32,7 @@ const Sidebar = () => {
         // console.log(token);
         // await axios.post(
 
-        //   'https://diamondsoft-backend.onrender.com/api/login',
+        //   'http://192.168.1.59:5000/api/login',
         //   {},
         //   {
         //     headers: {
